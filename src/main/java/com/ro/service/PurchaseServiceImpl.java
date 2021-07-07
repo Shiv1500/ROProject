@@ -54,6 +54,8 @@ public class PurchaseServiceImpl implements PurchaseService {
 						purchaseHistory.setPurchaseId(pruchaseId);
 						purchaseHistoryRepository.save(purchaseHistory);
 					}
+					
+					BeanUtils.copyProperties(purchaseDTO.getCustomerRequest(), customerResponse);
 					customerResponse.setId(custId);
 					purchaseDTO.setCustomerResponse(customerResponse);
 				}else {
