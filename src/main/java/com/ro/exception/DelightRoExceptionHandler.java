@@ -9,14 +9,14 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 @RestControllerAdvice
 public class DelightRoExceptionHandler {
 
-	@ExceptionHandler(DelightRoException.class)
-	public ResponseEntity<Object> handleCustomeException(DelightRoException delightRoException) {
-		ErrorResponse errorResponse = new ErrorResponse();
-		errorResponse.setCode(HttpStatus.NOT_FOUND.value()+"");
-		errorResponse.setMessage(delightRoException.getMessage());
-		return new ResponseEntity<Object>(errorResponse,HttpStatus.NOT_FOUND);
-	}
-	
+//	@ExceptionHandler(DelightRoException.class)
+//	public ResponseEntity<Object> handleCustomeException(DelightRoException delightRoException) {
+//		ErrorResponse errorResponse = new ErrorResponse();
+//		errorResponse.setCode(HttpStatus.NOT_FOUND.value()+"");
+//		errorResponse.setMessage(delightRoException.getMessage());
+//		return new ResponseEntity<Object>(errorResponse,HttpStatus.NOT_FOUND);
+//	}
+//	
 	@ExceptionHandler(Exception.class)
 	@ResponseStatus(code =HttpStatus.INTERNAL_SERVER_ERROR)
 	public ResponseEntity<ErrorResponse> ExceptionHandler(Exception ex){

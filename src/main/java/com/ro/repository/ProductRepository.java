@@ -14,4 +14,6 @@ public interface ProductRepository extends CrudRepository<Product, Integer> {
 	public List<Product> findProductById(@Param("productId") String productId);
 	@Query(value = "SELECT * from product_details_tbl p WHERE p.product_Name " +  " like concat('%',:productName,'%')", nativeQuery = true)
 	public List<Product> findProductByName(@Param("productName") String productName);
+	@Query(value ="select warranty_days from product_details_tbl where product_id = :productId", nativeQuery = true)
+	public Integer findWarrantyDaysById(@Param("productId") String productId);
 }

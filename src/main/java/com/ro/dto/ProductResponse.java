@@ -27,5 +27,6 @@ public class ProductResponse {
 	private Double sellingPrice;
 	private Double discount;
 	private Integer quantity;
+	private Date warrantyExpiryDate;
 
 }

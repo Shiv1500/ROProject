@@ -1,5 +1,7 @@
 package com.ro.entity;
 
+import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -32,4 +34,8 @@ public class PurchaseHistory {
 	private Integer custId;
 	@Column(name="purchase_id")
 	private Integer purchaseId;
+	@Column(name="product_warranty_days")
+	private Integer productWarrantyDays;
+	@Column(name = "warranty_expiry_date")
+	private Date warrantyExpiryDate;
 }

@@ -1,8 +1,12 @@
 package com.ro.controller;
 
+import javax.websocket.server.PathParam;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -23,8 +27,13 @@ public class PurchaseController {
 		} catch (Exception e) {
 			throw e; 
 		}
-		System.out.println("exit into saveData()");
 		return new ResponseEntity<PurchaseDTO>(savePurchaseData,HttpStatus.OK);
 	}
+	
+	@GetMapping("/checkWarranty/{custId}/{productId}")
+	public ResponseEntity<Boolean> checkWarranty(@PathVariable("custId") int custId,String productId) throws Exception{
+		Boolean checkWarranty = purchaseController.checkWarranty(custId,productId);
+		return new ResponseEntity<Boolean>(checkWarranty,HttpStatus.OK);
 
+	}
 }

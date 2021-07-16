@@ -9,7 +9,7 @@ import com.ro.dto.ProductResponse;
 
 @Service
 public interface ProductService {
-	public Integer saveProduct(ProductRequest productRequest);
+	public ProductResponse saveProduct(ProductRequest productRequest) throws Exception;
 	public List<ProductResponse>findAllProduct();
 	public List<ProductResponse>findProductById(String producId);
 	public List<ProductResponse>findProductByName(String producName);

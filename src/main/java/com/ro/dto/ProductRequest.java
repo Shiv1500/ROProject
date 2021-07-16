@@ -1,6 +1,6 @@
 package com.ro.dto;
 
-import java.util.Date;
+import java.sql.Date;
 
 import org.springframework.stereotype.Component;
 
@@ -23,4 +23,5 @@ public class ProductRequest {
 	private Double sellingPrice;
 	private Double discount;
 	private Integer quantity;
+	private Date warrantyExpiryDate;
 }
